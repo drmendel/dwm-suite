@@ -1,0 +1,25 @@
+# Essential
+OK	00 vanitygaps - gaps between windows
+OK	01 movestack - Mod+J/K move windows around
+OK	02 attachbottom - oldest window on top
+OK	03 unfloatvisible - unfloat window
+OK	04 pertag - changed layout doesnt change on other tags
+OK	05 tiledmove - move with mouse
+OK	06 statusallmons - statusbar on all monitors
+
+# Nice to have
+OK	07 resizehere - doesnt teleport the curson on resize
+OK	08 setborderpx - reset border
+OK	09 alwayscenter - all floating windows are centered
+OK	10 actualfullscreen - fullscreen (hide borders and bar)
+
+11 autostart - autostart script
+12 focusonnetactive - focus on new windows if its opened
+13 status2d - statusbar colors
+
+# Specific?
+13 warp - get the cursor to focus
+14 scratchpads - workspace without window
+
+# Compositor
+15 picom for animations
