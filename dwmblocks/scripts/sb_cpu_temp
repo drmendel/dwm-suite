@@ -1,0 +1,26 @@
+#!/bin/bash
+
+max_temp=0
+
+# Loop through all hwmon temp sensors
+for sensor in /sys/class/hwmon/hwmon*/temp*_input; do
+    if [ -f "$sensor" ]; then
+        t=$(cat "$sensor" 2>/dev/null)
+        
+	# Skip if not a number
+        if ! [[ "$t" =~ ^[0-9]+$ ]]; then
+            continue
+        fi
+
+	# Some sensors report millidegree
+        if [ "$t" -gt 1000 ]; then
+            t=$((t / 1000))
+        fi
+        if [ "$t" -gt "$max_temp" ]; then
+            max_temp=$t
+        fi
+    fi
+done
+
+echo "$max_temp°C"
+

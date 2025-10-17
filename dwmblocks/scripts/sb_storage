@@ -1,0 +1,12 @@
+#!/bin/bash
+
+DISK="/dev/nvme0n1p3"
+MOUNTPOINT=$(lsblk -no MOUNTPOINT "$DISK" | head -n1)
+
+if [ -n "$MOUNTPOINT" ]; then
+    read used total < <(df -BG "$MOUNTPOINT" | awk 'NR==2 {gsub("G","",$3); gsub("G","",$2); print $3, $2}')
+    printf "%3d/%3d\n" "$used" "$total"
+else
+    printf "N/A\n"
+fi
+

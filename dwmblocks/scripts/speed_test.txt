@@ -1,0 +1,11 @@
+test.sh took 0ms
+sb_volume took 8ms
+sb_packages took 323ms
+sb_memory took 6ms
+sb_internet took 20ms
+sb_storage took 12ms
+sb_datetime took 6ms
+sb_cpu_temp took 83ms
+sb_brightness took 5ms
+sb_battery took 7ms
+

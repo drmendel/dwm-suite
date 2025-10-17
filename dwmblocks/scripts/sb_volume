@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Get volume (as a number)
+vol="$(amixer get Master | grep -o -m1 '[0-9]\+%')"
+# Get mute state (yes/no)
+mute="$(amixer get Master | grep -o -m1 '\[off\]')"
+
+if [ "$mute" = "[off]" ]; then
+    printf "󰖁 %4s" "$vol"
+else
+    printf "󰕾 %4s" "$vol"
+fi
+

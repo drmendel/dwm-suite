@@ -1,0 +1,32 @@
+#!/bin/bash
+
+BATTERY_PATH="/sys/class/power_supply/BAT0"
+
+# Read values (no quotes around $var)
+capacity=$(cat "$BATTERY_PATH/capacity")
+status=$(cat "$BATTERY_PATH/status")
+
+# Determine icon
+if [ "$status" != "Discharging" ]; then
+    # icon=" 󱐋 "
+    icon="󰚥 "
+elif [ "$capacity" -ge 90 ]; then
+    # icon=" "
+    icon="󰁹 "
+elif [ "$capacity" -ge 70 ]; then
+    # icon=" "
+    icon="󰂀 "
+elif [ "$capacity" -ge 50 ]; then
+    # icon=" "
+    icon="󰁽 "
+elif [ "$capacity" -ge 30 ]; then
+    # icon=" "
+    icon="󰁺 "
+else
+    # icon=" "
+    icon="󰂎 "
+fi
+
+# Output like: ⚡82% or 74%
+printf "%s%3d%%" "$icon" "$capacity"
+

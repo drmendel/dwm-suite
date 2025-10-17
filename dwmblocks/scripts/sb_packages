@@ -1,0 +1,20 @@
+#!/bin/bash
+
+CACHE="/tmp/upgradable_packages"
+
+# Show cached value if it exists
+if [ -f "$CACHE" ]; then
+	count=$(cat "$CACHE")
+    if [ "$count" -gt 0 ]; then
+        printf "%3d" "$(cat "$CACHE")"
+    else
+	printf " 󰩐 "
+    fi
+else
+    echo "…"
+    (
+        count=$(xbps-install -un -n 2>/dev/null | wc -l)
+        echo "$count" > "$CACHE"
+        pkill -RTMIN+14 dwmblocks
+    ) &
+fi
