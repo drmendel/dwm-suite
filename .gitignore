@@ -1,0 +1,8 @@
+dwm/dwm
+dmenu/dmenu
+dmenu/stest
+dwmblocks/dwmblocks
+
+**.o
+**.gz
+**.gch
