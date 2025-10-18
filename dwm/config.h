@@ -18,14 +18,13 @@ static const char col_gray1[]       = "#000000";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#444444"; //#444444
-				    // = "#aa6600"; // orange
-				    // = "#339933"; // green
+static const char col_cyan[]        = "#444444";
+
 #define black "#000000"
 #define dark_gray "#111111"
 #define gray "#444444"
 #define light_gray "#aaaaaa"
-#define white "#dddddd"
+#define white "#ffffff"
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
