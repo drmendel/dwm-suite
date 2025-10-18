@@ -46,8 +46,9 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Alacritty", NULL,	  NULL,	      0,	    0,	         -1 },
-	{ "Firefox",  NULL,       NULL,       0,       	    0,           -1 },
-	{ "obs",      NULL,	  NULL,       0,	    0, 	         -1 }
+	{ "Firefox",  NULL,       NULL,       1 << 1,  	    0,           -1 },
+	{ "vlc",      NULL,       NULL,       1 << 6,       0,           -1 },
+	{ "obs",      NULL,	  NULL,       1 << 7,	    0, 	         -1 }
 };
 
 /* layout(s) */
